@@ -18,11 +18,10 @@ typedef int bool;
 */
 
 // Chaves de identificação dos metodos de ordenação (ordenacao.c) implementados
-const char N_METODOS[] = { 'q', 'm', 's' };
+const char N_METODOS[] = { 'm', 's', 'q' };
 
 // Tamanho dos vetores de dados
-const int TAMS[] = { 50000 };
-// const int TAMS[] = { 500000 };
+const int TAMS[] = { 10000, 100000, 50000, 1000000 };
 
 int main(void) {
 
@@ -111,13 +110,13 @@ bool gerarResultados(int casos_teste) {
   int n_metodos = sizeof(N_METODOS) / sizeof(N_METODOS[0]);
   int testes_concluidos = 0, total = n_casos * n_metodos * 2;
 
-  // for (int i = 0; i < n_casos; i++) {
-  //   for (int j = 0; j < n_metodos; j++, testes_concluidos++) {
-  //     renderizarProgresso(testes_concluidos, total, false);
-  //     if (!realizarOrdenacao('a', N_METODOS[j], TAMS[i], casos_teste))
-  //       return false;
-  //   }
-  // }
+  for (int i = 0; i < n_casos; i++) {
+    for (int j = 0; j < n_metodos; j++, testes_concluidos++) {
+      renderizarProgresso(testes_concluidos, total, false);
+      if (!realizarOrdenacao('a', N_METODOS[j], TAMS[i], casos_teste))
+        return false;
+    }
+  }
 
   for (int i = 0; i < n_casos; i++) {
     for (int j = 0; j < n_metodos; j++, testes_concluidos++) {
@@ -127,13 +126,13 @@ bool gerarResultados(int casos_teste) {
     }
   }
 
-  // for (int i = 0; i < n_casos; i++) {
-  //   for (int j = 0; j < n_metodos; j++, testes_concluidos++) {
-  //     renderizarProgresso(testes_concluidos, total, false);
-  //     if (!realizarOrdenacao('d', N_METODOS[j], TAMS[i], casos_teste))
-  //       return false;
-  //   }
-  // }
+  for (int i = 0; i < n_casos; i++) {
+    for (int j = 0; j < n_metodos; j++, testes_concluidos++) {
+      renderizarProgresso(testes_concluidos, total, false);
+      if (!realizarOrdenacao('d', N_METODOS[j], TAMS[i], casos_teste))
+        return false;
+    }
+  }
 
   renderizarProgresso(testes_concluidos, total, false);
 
