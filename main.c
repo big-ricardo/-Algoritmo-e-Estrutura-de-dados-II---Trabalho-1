@@ -142,7 +142,6 @@ bool gerarResultados(int casos_teste) {
 // Função é a responsavel por renderizar o progresso do processo de gerar os dados de ordenação
 void renderizarProgresso(int atual, int total, bool tipo) {
   system("clear || cls");
-  printf("%d %d %d\n", atual, total, tipo);
   printf("Progresso de %s:\n", tipo ? "Geracao de dados" : "Ordenacao");
 
   int porcentagem = (atual * 100) / total;
