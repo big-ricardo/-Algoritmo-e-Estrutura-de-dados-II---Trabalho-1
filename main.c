@@ -12,16 +12,11 @@
 
 typedef int bool;
 
-/*
-  Luis Ricardo Albano Santos - 2021031844
-  gcc -pedantic-errors -Wall main.c -o main.exe && ./main.exe
-*/
-
 // Chaves de identificação dos metodos de ordenação (ordenacao.c) implementados
 const char N_METODOS[] = { 'm', 's', 'q' };
 
 // Tamanho dos vetores de dados
-const int TAMS[] = { 10000, 100000, 50000, 1000000 };
+const int TAMS[] = { 10000, 100000, 500000, 1000000 };
 
 int main(void) {
 
@@ -108,7 +103,7 @@ bool gerarResultados(int casos_teste) {
 
   int n_casos = sizeof(TAMS) / sizeof(TAMS[0]);
   int n_metodos = sizeof(N_METODOS) / sizeof(N_METODOS[0]);
-  int testes_concluidos = 0, total = n_casos * n_metodos * 2;
+  int testes_concluidos = 0, total = n_casos * n_metodos * n_metodos;
 
   for (int i = 0; i < n_casos; i++) {
     for (int j = 0; j < n_metodos; j++, testes_concluidos++) {
